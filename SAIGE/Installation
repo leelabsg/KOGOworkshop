@@ -1,0 +1,33 @@
+#a. Installation on R with devtools library
+
+#After downloading MetaSKAT from Archive https://cran.r-project.org/src/contrib/Archive/MetaSKAT/
+
+install.packages('MetaSKAT_0.81 (1).tar.gz', repos = NULL, type="source")
+library(MetaSKAT); library(SKAT)
+devtools::install_github("weizhouUMICH/SAIGE")
+
+
+
+#b. installation by conda virtual environment on linux shell 
+
+conda create -n RSAIGE8 r-essentials r-base=3.6.1 python=2.7
+conda activate RSAIGE8
+conda install -c anaconda cmake boost zlib
+conda install -c conda-forge gettext lapack r-matrix
+conda install -c conda-forge r-spatest r-rcppeigen r-devtools r-skat
+conda install -c r r-rcpp r-rcpparmadillo r-data.table r-bh
+conda install -c bioconda r-rcppparallel r-optparse
+pip install cget click
+
+FLAGPATH=`which python | sed 's|/bin/python$||'`
+export LDFLAGS="-L${FLAGPATH}/lib"
+export CPPFLAGS="-I${FLAGPATH}/include"
+pip install savvy
+
+src_branch=master
+repo_src_url=https://github.com/weizhouUMICH/SAIGE
+git clone --depth 1 -b $src_branch $repo_src_url
+
+R CMD INSTALL --library=path_to_final_SAIGE_library SAIGE
+#path : ./SAIGE
+#When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_library)'
