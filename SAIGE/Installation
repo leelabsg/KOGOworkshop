@@ -8,7 +8,7 @@ devtools::install_github("weizhouUMICH/SAIGE")
 
 
 
-#b. installation by conda virtual environment on linux shell 
+#b. Installation by conda virtual environment on linux shell 
 
 conda create -n RSAIGE8 r-essentials r-base=3.6.1 python=2.7
 conda activate RSAIGE8
