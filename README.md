@@ -50,4 +50,4 @@ nohup Rscript step2_SPAtests.R
 </code>
 </pre>
 
-
+More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
