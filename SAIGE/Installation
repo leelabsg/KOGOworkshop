@@ -21,10 +21,10 @@ git clone --depth 1 -b $src_branch $repo_src_url
 
 #Now use one of the two following methods 
 
-1) with R Command
+#1) with R Command
 R CMD INSTALL --library=path_to_final_SAIGE_library SAIGE
 #path : ./SAIGE
 #When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_library)'
 
-2) with devtools 
+#2) with devtools 
 devtools::install_github("weizhouUMICH/SAIGE")
