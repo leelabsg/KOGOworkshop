@@ -1,7 +1,53 @@
 # KOGOworkshop
 
 1. Codes for installation, step1, step2, drawing plots are provided in the SAIGE directory.
-2. First, install SAIGE with devtools library in R. Please see code in Installation.R 
+
+2. First, install SAIGE with devtools library in R. You may choose either a or b method.
+
+a) Install dependencies on R with devtools library
+
+
+R code
+
+<pre>
+<code>
+library(devtools)
+install.packages('SKAT')
+devtools::install_github("leeshawn/MetaSKAT")
+library(MetaSKAT); library(SKAT)
+devtools::install_github("weizhouUMICH/SAIGE")
+library(SAIGE)
+</code>
+</pre>
+
+b) Installation by conda virtual environment on linux shell 
+
+Required yml file can be found in https://github.com/weizhouUMICH/SAIGE
+or in ./saige_example.
+
+code on bash shell
+
+<pre>
+<code>
+conda env create -f environment-RSAIGE.yml
+conda activate RSAIGE
+
+FLAGPATH=`which python | sed 's|/bin/python$||'`
+export LDFLAGS="-L${FLAGPATH}/lib"
+export CPPFLAGS="-I${FLAGPATH}/include"
+pip install savvy
+
+src_branch=master
+repo_src_url=https://github.com/weizhouUMICH/SAIGE
+git clone --depth 1 -b $src_branch $repo_src_url
+R CMD INSTALL --library=path_to_final_SAIGE_library SAIGE
+
+</code>
+</pre>
+
+path is ./SAIGE
+When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_library)'
+
 
 3. Example plink files and vcf files are in the ./saige_example directory
 
