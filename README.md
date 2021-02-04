@@ -1,11 +1,11 @@
 # KOGOworkshop
 
 1. Codes for installation, step1, step2, drawing plots are provided in the SAIGE directory.
-2. First, install SAIGE with devtools library in R 
+2. First, install SAIGE with devtools library in R. Please see code in Installation.R 
 
-3. Prepare 
+3. Example plink files and vcf files are in the ./saige_example directory
 
-3. vcf.gz file and tbi files are needed in order to make single variant association test.
+4. vcf.gz file and tbi files are needed in order to make single variant association test.
 If you want to make association tests on all of the variants in the plink files, use the following codes
 
 <pre>
@@ -20,8 +20,8 @@ tabix -p vcf saige_example.vcf.gz
 
 Installation of bgzip and tabix can be done with command 'conda install -c bioconda tabix' (conda environment) or 'apt-get install tabix'
 
-3. Running SAIGE - fitting null GLMM
-
+5. Running SAIGE - fitting null GLMM
+nohup command makes the process run in the background so that you can work in other processes.
 <pre>
 <code>
 nohup Rscript step1_fitNULLGLMM.R
@@ -36,7 +36,7 @@ nohup Rscript step1_fitNULLGLMM.R
 </code>
 </pre>
 
-4. Running SAIGE- Step2 Single variant association test
+6. Running SAIGE- Step2 Single variant association test
 
 <pre>
 <code>
@@ -52,5 +52,8 @@ nohup Rscript step2_SPAtests.R
 --IsOutputAFinCaseCtrl=TRUE --LOCO=FALSE &
 </code>
 </pre>
+
+
+7. To make Manhattan plot and QQ plot, please use the plots.R code.
 
 More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
