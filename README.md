@@ -11,12 +11,14 @@ R code
 
 <pre>
 <code>
-library(devtools)
+install.packages('devtools')
 install.packages('SKAT')
+library(devtools)
 devtools::install_github("leeshawn/MetaSKAT")
 library(MetaSKAT); library(SKAT)
 devtools::install_github("weizhouUMICH/SAIGE")
-#try pip install cget or pip install savvy if not working 
+
+#try pip cget or cmake3 if not working 
 library(SAIGE)
 </code>
 </pre>
