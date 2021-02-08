@@ -26,7 +26,7 @@ library(SAIGE)
 b) Installation by conda virtual environment on linux shell 
 
 Required yml file can be found in https://github.com/weizhouUMICH/SAIGE
-or in ./saige_example.
+or in /BiO/kogo/data
 
 code on bash shell
 
