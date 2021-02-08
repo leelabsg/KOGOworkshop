@@ -16,6 +16,7 @@ install.packages('SKAT')
 devtools::install_github("leeshawn/MetaSKAT")
 library(MetaSKAT); library(SKAT)
 devtools::install_github("weizhouUMICH/SAIGE")
+#try pip install cget or pip install savvy if not working 
 library(SAIGE)
 </code>
 </pre>
