@@ -59,15 +59,15 @@ If you want to make association tests on all of the variants in the plink files,
 
 <pre>
 <code>
-./plink2 --bfile saige_example --recode vcf id-paste=iid --out saige_example
+./plink2 --bfile saige_example --recode vcf id-paste=iid --out practice
 
-bgzip saige_example.vcf
+bgzip practice.vcf
 
-tabix -p vcf saige_example.vcf.gz 
+tabix -p vcf practice.vcf.gz 
 </code>
 </pre>
 
-Installation of bgzip and tabix can be done with command 'conda install -c bioconda tabix' (conda environment) or 'apt-get install tabix'
+Installation of bgzip and tabix can be done with command 'conda install -c bioconda tabix' (conda environment) or 'apt-get install tabix' or follow the instructions in http://www.htslib.org/download/ (Download htslib)
 
 5. Running SAIGE - fitting null GLMM
 nohup command makes the process run in the background so that you can work in other processes.
@@ -90,8 +90,8 @@ nohup Rscript step1_fitNULLGLMM.R
 <pre>
 <code>
 nohup Rscript step2_SPAtests.R
---vcfFile=genotype_10markers.missingness.vcf.gz
---vcfFileIndex=genotype_10markers.missingness.vcf.gz.tbi
+--vcfFile=practice.vcf.gz
+--vcfFileIndex=practice.vcf.gz.tbi
 --vcfField=GT
 --chrom=1 --minMAF=0.0001 --minMAC=1
 --sampleFile=sampleIDindosage.txt
