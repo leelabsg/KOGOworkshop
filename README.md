@@ -52,7 +52,7 @@ path is ./SAIGE
 When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_library)'
 
 
-3. Example plink files and vcf files are in the /BiO/kogo/data directory. Please copy the plink2 in /BiO/kogo/apps/ by cp plink2 ./your directory 
+3. Please copy all the example files in Example files in /BiO/kogo/data directory and the plink2 program in /BiO/kogo/apps/ to your directory 
 
 4. vcf.gz file and tbi files are needed in order to make single variant association test.
 If you want to make association tests on all of the variants in the plink files, use the following codes
