@@ -73,7 +73,7 @@ Installation of bgzip and tabix can be done with command 'conda install -c bioco
 nohup command makes the process run in the background so that you can work in other processes.
 <pre>
 <code>
-nohup Rscript step1_fitNULLGLMM.R
+nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step1_fitNULLGLMM.R
 --plinkFile=saige_example
 --phenoFile=saige_pheno.txt
 --phenoCol=y_binary
@@ -89,7 +89,7 @@ nohup Rscript step1_fitNULLGLMM.R
 
 <pre>
 <code>
-nohup Rscript step2_SPAtests.R
+nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step2_SPAtests.R
 --vcfFile=practice.vcf.gz
 --vcfFileIndex=practice.vcf.gz.tbi
 --vcfField=GT
