@@ -104,5 +104,5 @@ nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step2_SPAtests.R
 
 
 7. To make Manhattan plot and QQ plot, please use the plots.R code.
-
+/BiO/kogo/apps/R-4.0.2/bin/Rscript plots.R
 More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
