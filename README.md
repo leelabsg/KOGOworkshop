@@ -52,7 +52,7 @@ path is ./SAIGE
 When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_library)'
 
 
-3. Please copy all the example files in Example files in /BiO/kogo/data directory and the plink2 program in /BiO/kogo/apps/ to your directory. (cf .  cp -r /BiO/kogo/data/sglee/ ./ cp /BiO/kogo/apps/plink2 ./)
+3. Please copy all the example files in Example files in /BiO/kogo/data directory and the plink2 program in /BiO/kogo/apps/ to your directory. (cf .  cp -r /BiO/kogo/data/sglee/ ./ ,  cp /BiO/kogo/apps/plink2 ./)
 
 4. vcf.gz file and tbi files are needed in order to make single variant association test.
 If you want to make association tests on all of the variants in the plink files, use the following codes
@@ -73,7 +73,7 @@ Installation of bgzip and tabix can be done with command 'conda install -c bioco
 nohup command makes the process run in the background so that you can work in other processes.
 <pre>
 <code>
-nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step1_fitNULLGLMM.R
+nohup Rscript step1_fitNULLGLMM.R
 --plinkFile=saige_example
 --phenoFile=saige_pheno.txt
 --phenoCol=y_binary
@@ -89,7 +89,7 @@ nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step1_fitNULLGLMM.R
 
 <pre>
 <code>
-nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step2_SPAtests.R
+nohup Rscript step2_SPAtests.R
 --vcfFile=practice.vcf.gz
 --vcfFileIndex=practice.vcf.gz.tbi
 --vcfField=GT
@@ -104,5 +104,5 @@ nohup /BiO/kogo/apps/R-4.0.2/bin/Rscript step2_SPAtests.R
 
 
 7. To make Manhattan plot and QQ plot, please use the plots.R code.
-/BiO/kogo/apps/R-4.0.2/bin/Rscript plots.R
+Rscript plots.R
 More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
