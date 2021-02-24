@@ -67,6 +67,14 @@ tabix -p vcf practice.vcf.gz
 </code>
 </pre>
 
+or if you want to convert vcf files to plink binary files, 
+
+<pre>
+<code>
+./plink2 --vcf saige_example.vcf.gz --make-bed --out result 
+</code>
+</pre>
+
 Installation of bgzip and tabix can be done with command 'conda install -c bioconda tabix' (conda environment) or 'apt-get install tabix' or follow the instructions in http://www.htslib.org/download/ (Download htslib)
 
 5. Running SAIGE - fitting null GLMM
