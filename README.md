@@ -185,7 +185,7 @@ Close_SSD()
 <pre>
 <code>
 step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
---vcfFileIndex=genotype_10markers.vcf.gz.tbi \
+--vcfFileIndex=genotype_10markers.vcf.gz.csi \
 --chrom=1 \
 --vcfField=GT \
 --minMAF=0 \
