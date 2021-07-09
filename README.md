@@ -73,7 +73,8 @@ If you want to make association tests on all of the variants in the plink files,
 
 bgzip practice.vcf
 
-tabix -p vcf practice.vcf.gz 
+tabix -p vcf practice.vcf.gz  # create tbi index file
+tabix -C practice.vcf.gz # create csi index file for step2 in SAIGE-GENE
 </code>
 </pre>
 
