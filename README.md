@@ -117,6 +117,9 @@ More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-
 
 # SKAT (updated 2021-07-09)
 
+For the binary phenotype, use **SKATBinary.SSD.All** function
+
+
 <pre>
 <code>
 library(SKAT)
