@@ -115,7 +115,7 @@ nohup Rscript step2_SPAtests.R
 Rscript plots.R
 More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
 
-#SKAT (updated 2021-07-09)
+# SKAT (updated 2021-07-09)
 
 <pre>
 <code>
