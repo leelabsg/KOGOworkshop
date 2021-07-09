@@ -178,7 +178,38 @@ Close_SSD()
 
 **Step 0**
 
+<pre>
+<code>
+createSparseGRM.R --plinkFile=saige_gene_example \
+--nThreads=4 \
+--outputPrefix=step0_result \
+--numRandomMarkerforSparseKin=2000 \
+--relatednessCutoff=0.125
+</code>
+</pre>
+
 **Step 1**
+
+<pre>
+<code>
+step1_fitNULLGLMM.R --plinkFile=saige_gene_example \
+--phenoFile=saige_gene_pheno.txt \
+--phenoCol=y_quantitative \
+--covarColList=x1,x2 \
+--sampleIDColinphenoFile=IID \
+--traitType=quantitative \
+--invNormalize=TRUE \
+--outputPrefix=step1_result \
+--outputPrefix_varRatio=step1_result_ratio \
+--sparseGRMFile=step0_result_relatednessCutoff_0.125_2000_randomMarkersUsed.sparseGRM.mtx \
+--sparseGRMSampleIDFile=step0_result_relatednessCutoff_0.125_2000_randomMarkersUsed.sparseGRM.mtx.sampleIDs.txt \
+--nThreads=4 \
+--LOCO=FALSE \
+--skipModelFitting=FALSE \
+--IsSparseKin=TRUE \
+--isCateVarianceRatio=TRUE
+</code>
+</pre>
 
 **Step 2** : Gene based test
 
