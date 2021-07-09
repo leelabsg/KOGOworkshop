@@ -4,6 +4,16 @@
 
 2. First, install SAIGE with devtools library in R. You may choose either a or b method.
 
+0) SAIGE is now available in conda environment 
+ <pre>
+ <code>
+ 
+conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
+conda activate saige
+ 
+ </code>
+ </pre>
+
 a) Install dependencies on R with devtools library
 
 
