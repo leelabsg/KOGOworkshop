@@ -230,8 +230,32 @@ step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
 --groupFile=groupFile_geneBasedtest_simulation.txt \
 --sparseSigmaFile=step1_result_ratio.varianceRatio.txt_relatednessCutoff_0.125_2000_randomMarkersUsed.sparseSigma.mtx \
 --IsSingleVarinGroupTest=TRUE \
---method_to_CollapseUltraRare =absence_or_presence \
---MACCutoff_to_CollapseUltraRare =10
+--LOCO=FALSE
+</code>
+</pre>
+
+
+**Step 2** : Gene based test by collapsing ultra-rare variants
+
+<pre>
+<code>
+step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
+--vcfFileIndex=genotype_10markers.vcf.gz.csi \
+--chrom=1 \
+--vcfField=GT \
+--minMAF=0 \
+--minMAC=0.5 \
+--maxMAFforGroupTest=0.01 \
+--sampleFile=samplelist.txt \
+--GMMATmodelFile=step1_result.rda \
+--varianceRatioFile=step1_result_ratio.varianceRatio.txt \
+--SAIGEOutputFile=step2_result_gene.txt \
+--numLinesOutput=1 \
+--groupFile=groupFile_geneBasedtest_simulation.txt \
+--sparseSigmaFile=step1_result_ratio.varianceRatio.txt_relatednessCutoff_0.125_2000_randomMarkersUsed.sparseSigma.mtx \
+--IsSingleVarinGroupTest=TRUE \
+**--method_to_CollapseUltraRare=absence_or_presence** \
+**--MACCutoff_to_CollapseUltraRare=10**
 --LOCO=FALSE
 </code>
 </pre>
