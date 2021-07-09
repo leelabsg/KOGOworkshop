@@ -174,9 +174,9 @@ Close_SSD()
 </code>
 </pre>
 
-# SAIGE GENE 
+# SAIGE GENE (updated 2021-07-09)
 
-**Step 0**
+**Step 0** : Creating Sparse GRM (Genomic Relationship Matrix)
 
 <pre>
 <code>
@@ -188,7 +188,7 @@ createSparseGRM.R --plinkFile=saige_gene_example \
 </code>
 </pre>
 
-**Step 1**
+**Step 1** : Fitting Null model 
 
 <pre>
 <code>
