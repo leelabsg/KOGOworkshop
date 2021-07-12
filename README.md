@@ -126,6 +126,45 @@ nohup Rscript step2_SPAtests.R
 Rscript plots.R
 More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
 
+# Code for file preparation
+
+<pre>
+<code>
+
+#SetID file for SKAT 
+SetID = Annovar_output[c(7,16)]
+
+#7th column is the name of gene and 16th column is the name of the markers
+
+
+#Group file for SAIGE-GENE
+group=''
+gene_list=unique(Annovar_output$Gene.refGene)
+
+for(i in 1:length(gene_list)){
+ if(i==1){
+  group=paste0(group, gene_list[i])
+ }else{
+  group=paste(group, gene_list[i], sep='\n')
+ }
+ #index of the markers in the gene
+ idx=which(Annovar_output$Gene.refGene==gene_list[i])
+ 
+ #Match the form of markers' names
+ for(j in idx){
+  marker_name=paste0(Annovar_output[j,1],':',Annovar_output[j,2],'_',Annovar_output[j,4],'/',Annovar_output[j,5])
+  group=paste(group,marker_name)
+ }
+}
+
+#save result as group file
+write.table(group,file='groupfile.txt',row.names=F,col.names=F,quote=F
+ 
+
+</code>
+</pre>
+
+
 # SKAT (updated 2021-07-09)
 
 For the binary phenotype, use **SKATBinary.SSD.All** function
