@@ -133,6 +133,7 @@ More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-
 
 #SetID file for SKAT 
 SetID = Annovar_output[c(7,16)]
+write.table(SetID,file='example.SetID',row.names=F,col.names=F,quote=F)
 
 #7th column is the name of gene and 16th column is the name of the markers
 
