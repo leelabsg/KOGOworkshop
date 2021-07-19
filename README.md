@@ -271,7 +271,7 @@ step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
 --sparseSigmaFile=step1_result_ratio.varianceRatio.txt_relatednessCutoff_0.125_2000_randomMarkersUsed.sparseSigma.mtx \
 --IsSingleVarinGroupTest=TRUE \
 --method_to_CollapseUltraRare =absence_or_presence \
---MACCutoff_to_CollapseUltraRare =10
+--MACCutoff_to_CollapseUltraRare =10  \
 --LOCO=FALSE
 </code>
 </pre>
