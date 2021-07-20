@@ -7,8 +7,13 @@
 0) SAIGE is now available in conda environment 
  <pre>
  <code>
- 
+
+(Admin)
 conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
+(Done already)
+
+(Users)
+source ../edu01/anaconda3/etc/profile.d/conda.sh
 conda activate saige
  
  </code>
