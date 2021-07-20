@@ -9,6 +9,7 @@
  <code>
 
 (Admin)
+export PATH=~/anaconda3/bin:$PATH
 conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
 (Done already)
 
