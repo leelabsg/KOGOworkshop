@@ -10,10 +10,15 @@
 
 (Admin)
 export PATH=~/anaconda3/bin:$PATH
+source ~/anaconda3/etc/profile.d/conda.sh
 conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
+conda activate saige
+conda install -c conda-forge r-skat
+conda install -c bioconda htslib
 (Done already)
 
 (Users)
+export PATH=../edu01/anaconda3/bin:$PATH
 source ../edu01/anaconda3/etc/profile.d/conda.sh
 conda activate saige
 
