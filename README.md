@@ -1,10 +1,13 @@
 # KOGOworkshop
 
+
+#SAIGE single variant association test
+
 1. Codes for installation, step1, step2, drawing plots are provided in the SAIGE directory.
 
 2. First, install SAIGE with devtools library in R. You may choose one of a,b, and c method.
 
-a) SAIGE is now available in conda environment 
+**a) SAIGE is now available in conda environment **
  <pre>
  <code>
 
@@ -12,15 +15,11 @@ a) SAIGE is now available in conda environment
 export PATH=~/anaconda3/bin:$PATH
 source ~/anaconda3/etc/profile.d/conda.sh
 conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
+(Version 0.44.5 : which does not have Cauchy combination function)
 
 conda activate saige
-conda install -c conda-forge r-devtools  
-conda install -c conda-forge r-skat  
+conda install -c conda-forge r-skat
 conda install -c bioconda htslib  
-devtools::install_github("leeshawn/MetaSKAT")
-conda install -c compbiocore cget  
-conda install -c anaconda cmake  
-conda install -c bioconda savvy  
 (Done already)
 
 (Users)
@@ -35,7 +34,7 @@ cp ../edu01/plink2 ~
  </code>
  </pre>
 
-b) Install dependencies on R with devtools library
+**b) Install dependencies on R with devtools library**
 
 
 R code
@@ -54,10 +53,10 @@ library(SAIGE)
 </code>
 </pre>
 
-c) Installation by conda virtual environment on linux shell 
+**c) Installation by conda virtual environment on linux shell** 
 
 Required yml file can be found in https://github.com/weizhouUMICH/SAIGE
-or in /BiO/kogo/data
+
 
 code on bash shell
 
@@ -83,7 +82,7 @@ path is ./SAIGE
 When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_library)'
 
 
-3. Please copy all the example files in Example files in /BiO/kogo/data directory and the plink2 program in /BiO/kogo/apps/ to your directory. (cf .  cp -r /BiO/kogo/data/sglee/ ./ ,  cp /BiO/kogo/apps/plink2 ./)
+3. Please copy all the example files in Example files in 
 
 4. vcf.gz file and tbi files are needed in order to make single variant association test.
 If you want to make association tests on all of the variants in the plink files you have, use the following codes
@@ -147,7 +146,7 @@ nohup Rscript step2_SPAtests.R \
 Rscript plots.R
 More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
 
-# Code for file preparation
+# Code for file preparation (gene based test)
 
 <pre>
 <code>
