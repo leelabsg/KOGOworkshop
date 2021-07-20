@@ -15,6 +15,10 @@ conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
 conda activate saige
 conda install -c conda-forge r-skat
 conda install -c bioconda htslib
+
+conda install -c compbiocore cget
+conda install -c anaconda cmake
+conda install -c bioconda savvy
 (Done already)
 
 (Users)
