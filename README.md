@@ -15,7 +15,11 @@ conda create -n saige -c conda-forge -c bioconda "r-base>=4.0" r-saige
 (Users)
 source ../edu01/anaconda3/etc/profile.d/conda.sh
 conda activate saige
- 
+
+#Copy all the files needed 
+
+cp -r ../edu01/sglee ~
+cp ../edu01/plink2 ~ 
  </code>
  </pre>
 
@@ -79,7 +83,7 @@ If you want to make association tests on all of the variants in the plink files,
 bgzip practice.vcf
 
 tabix -p vcf practice.vcf.gz  # create tbi index file
-tabix -C practice.vcf.gz # create csi index file for step2 in SAIGE-GENE
+tabix -C practice.vcf.gz # create csi  # index file for step2 in SAIGE-GENE
 </code>
 </pre>
 
