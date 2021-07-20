@@ -7,7 +7,7 @@
 
 2. First, install SAIGE with devtools library in R. You may choose one of a,b, and c method.
 
-**a) SAIGE is now available in conda environment **
+**a) SAIGE is now available in conda environment**
  <pre>
  <code>
 
