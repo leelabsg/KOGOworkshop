@@ -111,15 +111,15 @@ Installation of bgzip and tabix can be done with command 'conda install -c bioco
 nohup command makes the process run in the background so that you can work in other processes.
 <pre>
 <code>
-nohup Rscript step1_fitNULLGLMM.R
---plinkFile=saige_example
---phenoFile=saige_pheno.txt
---phenoCol=y_binary
---covarColList=x1,x2
---sampleIDColinphenoFile=IID
---traitType=binary
---outputPrefix=./step1_result --nThreads=4
---LOCO=FALSE --IsOverwriteVarianceRatioFile=TRUE &
+nohup Rscript step1_fitNULLGLMM.R \
+--plinkFile=saige_example \
+--phenoFile=saige_pheno.txt \
+--phenoCol=y_binary \ 
+--covarColList=x1,x2 \
+--sampleIDColinphenoFile=IID \
+--traitType=binary \
+--outputPrefix=./step1_result --nThreads=4 \
+--LOCO=FALSE --IsOverwriteVarianceRatioFile=TRUE & 
 </code>
 </pre>
 
@@ -127,15 +127,15 @@ nohup Rscript step1_fitNULLGLMM.R
 
 <pre>
 <code>
-nohup Rscript step2_SPAtests.R
---vcfFile=practice.vcf.gz
---vcfFileIndex=practice.vcf.gz.tbi
---vcfField=GT
---chrom=1 --minMAF=0.0001 --minMAC=1
---sampleFile=sampleIDindosage.txt
---GMMATmodelFile=step1_result.rda
---varianceRatioFile=step1_result.varianceRatio.txt
---SAIGEOutputFile=finalresult.txt --numLinesOutput=2
+nohup Rscript step2_SPAtests.R \
+--vcfFile=practice.vcf.gz \
+--vcfFileIndex=practice.vcf.gz.tbi \
+--vcfField=GT \
+--chrom=1 --minMAF=0.0001 --minMAC=1 \
+--sampleFile=sampleIDindosage.txt \
+--GMMATmodelFile=step1_result.rda \
+--varianceRatioFile=step1_result.varianceRatio.txt \
+--SAIGEOutputFile=finalresult.txt --numLinesOutput=2 \
 --IsOutputAFinCaseCtrl=TRUE --LOCO=FALSE &
 </code>
 </pre>
