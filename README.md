@@ -2,9 +2,9 @@
 
 1. Codes for installation, step1, step2, drawing plots are provided in the SAIGE directory.
 
-2. First, install SAIGE with devtools library in R. You may choose either a or b method.
+2. First, install SAIGE with devtools library in R. You may choose one of a,b, and c method.
 
-0) SAIGE is now available in conda environment 
+a) SAIGE is now available in conda environment 
  <pre>
  <code>
 
@@ -35,7 +35,7 @@ cp ../edu01/plink2 ~
  </code>
  </pre>
 
-a) Install dependencies on R with devtools library
+b) Install dependencies on R with devtools library
 
 
 R code
@@ -54,7 +54,7 @@ library(SAIGE)
 </code>
 </pre>
 
-b) Installation by conda virtual environment on linux shell 
+c) Installation by conda virtual environment on linux shell 
 
 Required yml file can be found in https://github.com/weizhouUMICH/SAIGE
 or in /BiO/kogo/data
@@ -86,7 +86,7 @@ When calling library in R, use 'library(SAIGE, lib.loc=path_to_final_SAIGE_libra
 3. Please copy all the example files in Example files in /BiO/kogo/data directory and the plink2 program in /BiO/kogo/apps/ to your directory. (cf .  cp -r /BiO/kogo/data/sglee/ ./ ,  cp /BiO/kogo/apps/plink2 ./)
 
 4. vcf.gz file and tbi files are needed in order to make single variant association test.
-If you want to make association tests on all of the variants in the plink files, use the following codes
+If you want to make association tests on all of the variants in the plink files you have, use the following codes
 
 <pre>
 <code>
