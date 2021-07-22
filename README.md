@@ -303,18 +303,21 @@ step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
 </code>
 </pre>
 
-# 2. Annotation - Annovar
+# Appendix. Annotation - Annovar
 ANNOVAR (ANNOtate VARiation) is a bioinformatics software tool for the interpretation and prioritization of single nucleotide variants (SNVs), insertions, deletions, and copy number variants (CNVs) of a given genome. It has the ability to annotate human genomes hg18, hg19, and hg38.
 
+Download annovar and perl first :   
 
 ![annovar](https://user-images.githubusercontent.com/73377376/97069199-74801580-1609-11eb-8775-0b07cadf878d.png)
 
 
 ### Example of basic workflow
 
-1. Download annotation database
+1. Download annovar, perl and annotation database
 
-    Here we can see the available databases : <http://annovar.openbioinformatics.org/en/latest/user-guide/download/>  
+    Here you can download annovar and see the available databases : <http://annovar.openbioinformatics.org/en/latest/user-guide/download/>  
+    Then, download perl here https://www.perl.org/get.html![image](https://user-images.githubusercontent.com/49855759/126604950-e755e1b7-019b-420f-8ff8-cae7f7287a1a.png)
+
     You can download the reference genome database that suits your study (Ex. hg19(GRCh37), hg38(GRCh38) .. )
 
    * Download the hg38 database
