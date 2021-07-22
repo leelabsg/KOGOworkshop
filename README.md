@@ -153,48 +153,57 @@ nohup step2_SPAtests.R \
 
 7. To make Manhattan plot and QQ plot, please use the plots.R code.
 Rscript plots.R
-More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
-
-# Code for file preparation (gene based test)
-
 <pre>
 <code>
+library(qqman)
 
-#SetID file for SKAT 
-SetID = Annovar_output[c(7,16)]
-write.table(SetID,file='example.SetID',row.names=F,col.names=F,quote=F)
+gwas<-read.table('finalresult.txt',h=T)
 
-#7th column is the name of gene and 16th column is the name of the markers
+colnames(gwas)[c(2,3,14)]<-c('BP','SNP','P')
+png(file='manhattan_plot.png',width=1000, height=1000)
+manhattan(gwas, main='Chromosome 1 Manhattan Plot')
+dev.off()
 
-
-#Group file for SAIGE-GENE
-group=''
-gene_list=unique(Annovar_output$Gene.refGene)
-
-for(i in 1:length(gene_list)){
- if(i==1){
-  group=paste0(group, gene_list[i])
- }else{
-  group=paste(group, gene_list[i], sep='\n')
- }
- #index of the markers in the gene
- idx=which(Annovar_output$Gene.refGene==gene_list[i])
- 
- #Match the form of markers' names
- for(j in idx){
-  marker_name=paste0(Annovar_output[j,1],':',Annovar_output[j,2],'_',Annovar_output[j,4],'/',Annovar_output[j,5])
-  group=paste(group,marker_name)
- }
-}
-
-#save result as group file
-write.table(group,file='groupfile.txt',row.names=F,col.names=F,quote=F
- 
+png(file='qq_plot.png',width=1000, height=1000)
+qq(gwas$P, main='Q-Q plot of chromosome 1')
+dev.off()
 
 </code>
 </pre>
 
+More detailed information in https://github.com/weizhouUMICH/SAIGE/wiki/Genetic-association-tests-using-SAIGE
 
+# Code for file preparation (gene based test)
+
+Use the groupfile.R code in the sglee directory.
+
+**Usage**
+Rscript groupfile.R <method> <annovar output filename> <mode> <gene function> <exonic function>
+
+ex)
+Rscript groupfile.R SAIGE-GENE Annovar_output.csv manual exonic,intronic synonymous_SNV
+
+**Method** : SKAT / SAIGE-GENE 
+ Makes setID file if SKAT, groupfile if SAIGE-GENE
+ 
+ **Mode** : Default(blank) / All / manual
+If you only type method and annovar output filename, the default mode selects only nonsynonymous SNV and loss of function (frameshift deletion, frameshift insertion, startloss, stopgain, stoploss) variant from each gene.
+ 
+The mode 'All' selects every variant in the gene
+ 
+If you set the mode as 'manual', you must type specific gene function and exonic function of the markers.
+You type gene functions with ',' and do not put space between them. Then, put space and do the same with exonic functions. You can select among the lists below.
+
+ gene_function_list = { downstream, exonic, exonic;splicing, intergenic, intronic, ncRNA_exonic, ncRNA_exonic;splicing, ncRNA_intronic, ncRNA_splicing, ncRNA_UTR5, splicing, upstream, upstream;downstream, UTR3, UTR5, UTR5;UTR3 }
+
+exonic_function_list = { frameshift_deletion, frameshift_insertion, nonframeshift_deletion, nonframeshift_insertion, nonsynonymous_SNV, startloss, stopgain, stoploss, synonymous_SNV }
+
+ex) Rscript SKAT Annovar_output.csv manual exonic,intronic,splicing frameshift_deletion,nonsynonymous_SNV 
+
+Code can be found in sglee directory or in this github.
+ 
+ 
+ 
 # SKAT (updated 2021-07-09)
 
 For the binary phenotype, use **SKATBinary.SSD.All** function
