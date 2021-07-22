@@ -258,11 +258,11 @@ Close_SSD()
 
 <pre>
 <code>
-createSparseGRM.R --plinkFile=saige_gene_example \
+nohup createSparseGRM.R --plinkFile=saige_gene_example \
 --nThreads=4 \
 --outputPrefix=step0_result \
 --numRandomMarkerforSparseKin=2000 \
---relatednessCutoff=0.125
+--relatednessCutoff=0.125 &
 </code>
 </pre>
 
@@ -270,7 +270,7 @@ createSparseGRM.R --plinkFile=saige_gene_example \
 
 <pre>
 <code>
-step1_fitNULLGLMM.R --plinkFile=saige_gene_example \
+nohup step1_fitNULLGLMM.R --plinkFile=saige_gene_example \
 --phenoFile=saige_gene_pheno.txt \
 --phenoCol=y_quantitative \
 --covarColList=x1,x2 \
@@ -285,7 +285,7 @@ step1_fitNULLGLMM.R --plinkFile=saige_gene_example \
 --LOCO=FALSE \
 --skipModelFitting=FALSE \
 --IsSparseKin=TRUE \
---isCateVarianceRatio=TRUE
+--isCateVarianceRatio=TRUE &
 </code>
 </pre>
 
@@ -293,7 +293,7 @@ step1_fitNULLGLMM.R --plinkFile=saige_gene_example \
 
 <pre>
 <code>
-step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
+nohup step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
 --vcfFileIndex=genotype_10markers.vcf.gz.csi \
 --chrom=1 \
 --vcfField=GT \
@@ -310,7 +310,7 @@ step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
 --IsSingleVarinGroupTest=TRUE \
 --method_to_CollapseUltraRare=absence_or_presence \
 --MACCutoff_to_CollapseUltraRare=10  \
---LOCO=FALSE
+--LOCO=FALSE &
 </code>
 </pre>
 
