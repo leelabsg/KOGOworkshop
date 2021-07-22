@@ -303,4 +303,45 @@ step2_SPAtests.R --vcfFile=genotype_10markers.vcf.gz  \
 </code>
 </pre>
 
+# 2. Annotation - Annovar
+ANNOVAR (ANNOtate VARiation) is a bioinformatics software tool for the interpretation and prioritization of single nucleotide variants (SNVs), insertions, deletions, and copy number variants (CNVs) of a given genome. It has the ability to annotate human genomes hg18, hg19, and hg38.
+
+
+![annovar](https://user-images.githubusercontent.com/73377376/97069199-74801580-1609-11eb-8775-0b07cadf878d.png)
+
+
+### Example of basic workflow
+
+1. Download annotation database
+
+    Here we can see the available databases : <http://annovar.openbioinformatics.org/en/latest/user-guide/download/>  
+    You can download the reference genome database that suits your study (Ex. hg19(GRCh37), hg38(GRCh38) .. )
+
+   * Download the hg38 database
+<pre>
+<code>
+        ./perl annotate_variation.pl -buildver hg38 -downdb -webfrom annovar refGene humandb/
+        # Or if perl is already installed,
+        ./annotate_variation.pl -buildver hg38 -downdb -webfrom annovar refGene humandb/
+</code>
+</pre>
+
+2. Run annotate-varation.pl and proceed with the annotation work using the vcf file
+
+<pre>
+<code>
+        ./perl table_annovar.pl  [VCF_FILENAME.vcf]  humandb/ --outfile [FILENAME] --buildver hg38 
+        --protocol refGene --operation g –vcfinput
+        # Or if perl is already installed,
+        ./table_annovar.pl  [VCF_FILENAME.vcf]  humandb/ --outfile [FILENAME] --buildver hg38 
+        --protocol refGene --operation g –vcfinput
+</code>
+</pre>  
+* VCF_FILENAME.vcf : input vcf filename  
+* FILENAME : name of the file you want to save  
+
+For more information, please refer to this tutorial : <http://annovar.openbioinformatics.org/en/latest/user-guide/startup/#annotate_variationpl>
+
+If the process above is successfully performed, the following file will be created. > [FILENAME].hg38_multianno.txt.  
+The following analysis can be carried out using the multianno.txt file above.
 
