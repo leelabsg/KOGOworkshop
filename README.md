@@ -112,15 +112,18 @@ Installation of bgzip and tabix can be done with command 'conda install -c bioco
 nohup command makes the process run in the background so that you can work in other processes.
 <pre>
 <code>
-nohup Rscript step1_fitNULLGLMM.R \
+
+nohup step1_fitNULLGLMM.R \
 --plinkFile=saige_example \
 --phenoFile=saige_pheno.txt \
---phenoCol=y_binary \ 
+--phenoCol=y_binary \
 --covarColList=x1,x2 \
 --sampleIDColinphenoFile=IID \
 --traitType=binary \
 --outputPrefix=./step1_result --nThreads=4 \
---LOCO=FALSE --IsOverwriteVarianceRatioFile=TRUE & 
+--LOCO=FALSE \
+--IsOverwriteVarianceRatioFile=TRUE &
+
 </code>
 </pre>
 
@@ -128,16 +131,22 @@ nohup Rscript step1_fitNULLGLMM.R \
 
 <pre>
 <code>
-nohup Rscript step2_SPAtests.R \
---vcfFile=practice.vcf.gz \
---vcfFileIndex=practice.vcf.gz.tbi \
+
+nohup step2_SPAtests.R \
+--vcfFile=saige_example.vcf.gz \
+--vcfFileIndex=saige_example.vcf.gz.tbi \
 --vcfField=GT \
---chrom=1 --minMAF=0.0001 --minMAC=1 \
+--chrom=1 \
+--minMAF=0.0001 \
+--minMAC=1 \
 --sampleFile=sampleIDindosage.txt \
 --GMMATmodelFile=step1_result.rda \
 --varianceRatioFile=step1_result.varianceRatio.txt \
---SAIGEOutputFile=finalresult.txt --numLinesOutput=2 \
---IsOutputAFinCaseCtrl=TRUE --LOCO=FALSE &
+--SAIGEOutputFile=finalresult.txt \
+--numLinesOutput=2 \
+--IsOutputAFinCaseCtrl=TRUE \
+--LOCO=FALSE &
+
 </code>
 </pre>
 
@@ -207,10 +216,8 @@ File.Cov<-'./Example1.Cov'
 FAM_Cov<-Read_Plink_FAM_Cov(File.Fam,File.Cov,Is.binary = F)
 
 #Object file for Null model
-X1<-FAM_Cov$X1
-X2<-FAM_Cov$X2
-y<-FAM_Cov$Phenotype
-obj<-SKAT_Null_Model(y~X1+X2, out_type = 'C')
+
+obj<-SKAT_Null_Model(Phenotype~X1+X2, data=FAM_Cov, out_type = 'C')
 
 # If the phenotype is binary one, out_type='D'
 #When there is no covariate file, use FAM<-Read_Plink_FAM(File.Fam,Is.binary = F) 
