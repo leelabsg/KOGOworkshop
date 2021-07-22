@@ -184,9 +184,11 @@ ex)
 Rscript groupfile.R SAIGE-GENE Annovar_output.csv manual exonic,intronic synonymous_SNV
 
 **Method** : SKAT / SAIGE-GENE 
- Makes setID file if SKAT, groupfile if SAIGE-GENE
+ 
+Makes setID file if SKAT, groupfile if SAIGE-GENE
  
  **Mode** : Default(blank) / All / manual
+
 If you only type method and annovar output filename, the default mode selects only nonsynonymous SNV and loss of function (frameshift deletion, frameshift insertion, startloss, stopgain, stoploss) variant from each gene.
  
 The mode 'All' selects every variant in the gene
@@ -198,7 +200,7 @@ You type gene functions with ',' and do not put space between them. Then, put sp
 
 exonic_function_list = { frameshift_deletion, frameshift_insertion, nonframeshift_deletion, nonframeshift_insertion, nonsynonymous_SNV, startloss, stopgain, stoploss, synonymous_SNV }
 
-ex) Rscript SKAT Annovar_output.csv manual exonic,intronic,splicing frameshift_deletion,nonsynonymous_SNV 
+ex) Rscript groupfile.R SKAT Annovar_output.csv manual exonic,intronic,splicing frameshift_deletion,nonsynonymous_SNV 
 
 Code can be found in sglee directory or in this github.
  
