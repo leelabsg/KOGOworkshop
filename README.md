@@ -101,7 +101,7 @@ dev.off()
 Using `scp` command, you can move PNG files to your local machine.
 
 ```
-scp -rP 8517 'edu01@59.26.46.120:~/sglee/SAIGE/output/*.png'
+scp -rP 8517 'edu01@59.26.46.120:~/sglee/SAIGE/output/*.png' .
 ```
 
 
