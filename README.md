@@ -22,6 +22,12 @@ plink2 \
 
 ### Running SAIGE using Docker
 
+#### SAIGE
+
+SAIGE is an R package for genome-wide association tests in large-scale biobanks.
+
+![SAIGE](https://saigegit.github.io/SAIGE-doc/assets/img/saige-siage-gene-outline.png)
+
 #### Step 1 (Fitting the null model)
 
 ##### Binary trait
@@ -202,6 +208,13 @@ docker run -v /BiO/kogo/home/edu01/sglee/SAIGE-GENE:/BiO/kogo/home/edu01/sglee/S
     --annotation_in_groupTest=lof,missense:lof,missense:lof:synonymous \
     --maxMAF_in_groupTest=0.0001,0.001,0.01
 ```
+
+### DNAnexus
+
+DNAnexus provides a cloud-based data analysis and management platform for DNA sequence data. (https://www.dnanexus.com/) \
+You can also run SAIGE/SAIGE-GENE+ on DNAnexus.
+
+More details can be found at: https://saigegit.github.io//SAIGE-doc/docs/UK_Biobank_WES_analysis.html
 
 ### Appendix 1 (Annotation using ANNOVAR)
 
