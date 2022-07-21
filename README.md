@@ -110,6 +110,14 @@ Using `scp` command, you can move PNG files to your local machine.
 scp -rP 8517 'edu01@59.26.46.120:~/sglee/SAIGE/output/*.png' .
 ```
 
+### Resources
+
+* UKB WES 200k PheWeb: https://ukb-200kexome.leelabsg.org/
+* KoGES PheWeb: https://koges.leelabsg.org/
+
+### FUMA
+
+* FUMA (https://fuma.ctglab.nl/): platform that can be used to annotate, prioritize, visualize and interpret GWAS results.
 
 ## Session 2. Gene-based association test (SAIGE-GENE+)
 
