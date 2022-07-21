@@ -24,6 +24,8 @@ plink2 \
 
 #### SAIGE
 
+* Documentation: https://saigegit.github.io//SAIGE-doc/
+
 SAIGE is an R package for genome-wide association tests in large-scale biobanks.
 
 ![SAIGE](https://saigegit.github.io/SAIGE-doc/assets/img/saige-siage-gene-outline.png)
