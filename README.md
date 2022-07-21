@@ -1,5 +1,11 @@
 # KOGO Workshop - Biobank Data Analysis Practice
 
+## Connecting to the server
+
+```
+ssh edu01@59.26.46.120 -p 8517
+```
+
 ## Session 1. Introduction to UK Biobank and SAIGE
 
 ### PC calculation using PLINK
