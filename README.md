@@ -1,11 +1,5 @@
 # KOGO Workshop - Biobank Data Analysis Practice
 
-## Connecting to the server
-
-```
-ssh edu01@59.26.46.120 -p 8517
-```
-
 ## Session 1. Introduction to UK Biobank and SAIGE
 
 ### PC calculation using PLINK
@@ -259,6 +253,7 @@ If the process above is successfully performed, a file named `[FILENAME].hg38_mu
 
 ### Appendix 2 (Making a group file)
 
+You can download pre-prepared group files by chromosome [here](https://drive.google.com/file/d/1WvmVXV1NWhS3AbiwEX38yf_9MY9L047h/view?usp=sharing). \
 You can manually generate a group file for SAIGE-GENE or SetID file for SKAT using `groupfile.R`.
 
 **Usage**: `Rscript groupfile.R [method] [annotation_file] [mode] [gene_function_list] [exonic_function_list]`
