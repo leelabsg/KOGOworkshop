@@ -246,7 +246,7 @@ ANNOVAR (ANNOtate VARiation) is a bioinformatics software tool for the interpret
 
 2. Make a table with annotation using the VCF file
     ```
-    ./table_annovar.pl [VCF_FILENAME.vcf] humandb/ --outfile [FILENAME] --buildver hg38 --protocol refGene --operation g –vcfinput
+    ./table_annovar.pl [VCF_FILENAME.vcf] humandb/ --outfile [FILENAME] --buildver hg38 --protocol refGene --operation g --vcfinput
     ```
 
 If the process above is successfully performed, a file named `[FILENAME].hg38_multianno.txt` will be created. 
